@@ -590,7 +590,7 @@ func SendXmpp(senderId, apiKey string, m XmppMessage) (string, int, error) {
 func Listen(senderId, apiKey string, h MessageHandler, stop <-chan bool) error {
 	cl, err := newXmppGcmClient(senderId, apiKey)
 	if err != nil {
-		return fmt.Errorf("error creating xmpp client>%v", err)
+		return fmt.Errorf("Ishwar error creating xmpp client>%v", err)
 	}
 	return cl.listen(h, stop)
 }
