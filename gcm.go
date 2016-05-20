@@ -587,7 +587,7 @@ func SendXmpp(senderId, apiKey string, m XmppMessage) (string, int, error) {
 // for CCS message that can be of interest to the listener: upstream messages, delivery receipt
 // notifications, errors. An optional stop channel can be provided to
 // stop listening.
-func Listen(senderId, apiKey string, h MessageHandler, stop <-chan bool) error {
+func Listen1(senderId, apiKey string, h MessageHandler, stop <-chan bool) error {
 	cl, err := newXmppGcmClient(senderId, apiKey)
 	if err != nil {
 		return fmt.Errorf("Ishwar error creating xmpp client>%v", err)
